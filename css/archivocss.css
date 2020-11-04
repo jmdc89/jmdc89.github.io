@@ -1,0 +1,21 @@
+
+
+/*
+--Fonts--
+font-family: 'Proza Libre', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+h1{
+	font-family: 'Proza Libre', sans-serif;
+	font-size: 60px;
+	font-weight: lighter;
+	font-variant: small-caps;
+}
+
+p{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	text-align: justify;
+}
+
