@@ -31,13 +31,13 @@
 				<figure id="logo_menu"><img src="images/logo.png" alt=""></figure>
 
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About me</a></li>
-					<li><a href="#">Skills</a></li>
-					<li><a href="#">Portfolio</a></li>
-					<li><a href="#">Courses</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a onClick = "navSection('home')" href="#">Home</a></li>
+					<li><a onClick = "navSection('aboutme')" href="#">About me</a></li>
+					<li><a onClick = "navSection('skills')" href="#">Skills</a></li>
+					<li><a onClick = "navSection('portfolio')" href="#">Portfolio</a></li>
+					<li><a onClick = "navSection('courses')" href="#">Courses</a></li>
+					<li><a onClick = "navSection('blog')" href="#">Blog</a></li>
+					<li><a onClick = "navSection()" href="#">Contact</a></li>
 				</ul>
 
 			</div>
@@ -86,7 +86,6 @@
 			else{
 				card_menu.style.display = "block";
 			}
-
 		}
 
 		function displayMenu(){
@@ -116,13 +115,13 @@
 
 			for (var i=0; i<6; i++){
 				search = document.getElementById(sections[i]);
-				show = search.style.display
+				show = search.style.display;
 
 				if (show == "block"){
 					search.style.display = "none";
 					if (nav == "next"){
 						i++;
-						if (i>5) i=0;
+						if (i>5) i = 0;
 					}
 					if (nav == "prev"){
 						i--;
@@ -145,13 +144,8 @@
 			search.style.background = bkgr_body;
 			var menu = document.getElementByTagName("header")[0];
 			menu.style.background = bkgr_menu;
-
-
-
-
-
-
 		}
+
 	</script>
 	
 </body>
