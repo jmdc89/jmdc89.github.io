@@ -35,6 +35,7 @@
 					<li><a href="#">About me</a></li>
 					<li><a href="#">Skills</a></li>
 					<li><a href="#">Portfolio</a></li>
+					<li><a href="#">Courses</a></li>
 					<li><a href="#">Blog</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
@@ -42,58 +43,117 @@
 			</div>
 		</nav>
 
-		<div id="prev_section"><img src="images/icon-08.png" alt=""></div>
-		<div id="next_section"><img src="images/icon-08.png" alt=""></div>
+		<div id="prev_section" onClick="displaySection('prev')"><img src="images/icon-08.png" alt=""></div>
+		<div id="next_section" onClick="displaySection('next')"><img src="images/icon-08.png" alt=""></div>
 
 	</header>
 
+	<div id="slider">
+		<section class="slide" id="home" style="display:block" ></section>
+		<section class="slide" id="aboutme" style="display:none" ></section>
+		<section class="slide" id="skills" style="display:none" ></section>
+		<section class="slide" id="portfolio" style="display:none" ></section>
+		<section class="slide" id="courses" style="display:none" ></section>
+		<section class="slide" id="blog" style="display:none" ></section>
+	</div>
 
 	<script>
 		
-	alertSize();
-	
-	function alertSize() {
-	  var myWidth = 0, myHeight = 0;
-	  if( typeof( window.innerWidth ) == 'number' ) {
-	    //No-IE
-	    myWidth = window.innerWidth;
-	    myHeight = window.innerHeight;
-	  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
-	    //IE 6+
-	    myWidth = document.documentElement.clientWidth;
-	    myHeight = document.documentElement.clientHeight;
-	  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
-	    //IE 4 compatible
-	    myWidth = document.body.clientWidth;
-	    myHeight = document.body.clientHeight;
-	  } 
+		alertSize();
+		
+		function alertSize() {
+		  var myWidth = 0, myHeight = 0;
+		  if( typeof( window.innerWidth ) == 'number' ) {
+		    //No-IE
+		    myWidth = window.innerWidth;
+		    myHeight = window.innerHeight;
+		  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+		    //IE 6+
+		    myWidth = document.documentElement.clientWidth;
+		    myHeight = document.documentElement.clientHeight;
+		  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+		    //IE 4 compatible
+		    myWidth = document.body.clientWidth;
+		    myHeight = document.body.clientHeight;
+		  } 
 
-	  	var display;
-		var card_menu = document.getElementById("card_menu");
-		display = card_menu.style.display;
-		if (myWidth < 767){
-			card_menu.style.display = "none";
-		}
-		else{
-			card_menu.style.display = "block";
-		}
-
-	}
-
-		function displayMenu(){
-			var display;
+		  	var display;
 			var card_menu = document.getElementById("card_menu");
 			display = card_menu.style.display;
-
-			if (display == "none"){
-				card_menu.style.display = "block"
+			if (myWidth < 767){
+				card_menu.style.display = "none";
 			}
 			else{
-				card_menu.style.display = "none"
+				card_menu.style.display = "block";
 			}
+
 		}
 
+		function displayMenu(){
+				var display;
+				var card_menu = document.getElementById("card_menu");
+				display = card_menu.style.display;
+
+				if (display == "none"){
+					card_menu.style.display = "block"
+				}
+				else{
+					card_menu.style.display = "none"
+				}
+		}
+
+		function displaySection(nav){
+			var sections = new Array(6);
+			sections[0] = "home";
+			sections[1] = "aboutme";
+			sections[2] = "skills";
+			sections[3] = "portfolio";
+			sections[4] = "courses";
+			sections[5] = "blog";
+
+			var search;
+			var show;
+
+			for (var i=0; i<6; i++){
+				search = document.getElementById(sections[i]);
+				show = search.style.display
+
+				if (show == "block"){
+					search.style.display = "none";
+					if (nav == "next"){
+						i++;
+						if (i>5) i=0;
+					}
+					if (nav == "prev"){
+						i--;
+						if (i<0) i = 5;
+					}
+					search = document.getElementById(sections[i]);
+					search.style.display = "block";
+					break;
+				}
+			}
+			
+			if (sections[i] == "home"){
+				bkgr_body = "#233D58";
+				bkgr_menu = "#233D58";
+			}
+			else{
+				bkgr_body = "#f1f1f1";
+				bkgr_menu = "#29abe2";
+			}
+			search.style.background = bkgr_body;
+			var menu = document.getElementByTagName("header")[0];
+			menu.style.background = bkgr_menu;
+
+
+
+
+
+
+		}
 	</script>
 	
 </body>
+
 </html>

@@ -22,7 +22,7 @@ header nav .ioMenuMovil{
 	width: 120px;
 	cursor: pointer;
 	line-height: 40px;
-	margin: 0px 0px 0px 10px;
+	margin: 0px 0px 0px 50px;
 	padding-top: 5px;
 }
 
@@ -99,6 +99,51 @@ header #next_section img{
 	transform: rotate(180deg);
 }
 
+/*#slider{
+	width: 100%;
+	position: relative;
+	height: 600px;
+	background: black;
+}*/
+
+#slider section.slide{
+	position: absolute;
+	width: 100%;
+	top: 50px;
+	left: 0px;
+}
+
+
+#slider #home{
+	height: 500px;
+	background: black;
+}
+
+#slider #aboutme{
+	height: 500px;
+	background: orange;
+}
+
+#slider #skills{
+	height: 500px;
+	background: blue;
+}
+
+#slider #portfolio{
+	height: 500px;
+	background: red;
+}
+
+#slider #courses{
+	height: 500px;
+	background: green;
+}
+
+#slider #blog{
+	height: 500px;
+	background: blue;
+}
+
 
 @media screen and (min-width: 480px){
 	body{
@@ -126,7 +171,7 @@ header #next_section img{
 		width: 20%;
 		margin: 0px;
 		height: 50px;
-		margin-left: 80px;
+		margin-left: 40px;
 		line-height: 50px;
 		min-width: 200px;
 	}
@@ -153,7 +198,7 @@ header #next_section img{
 	header nav {
 		display: inline-block;
 		vertical-align: middle;
-		width: 62%;
+		width: 70%;
 		position: relative;
 	}
 
@@ -163,7 +208,7 @@ header #next_section img{
 	}
 
 	header nav #card_menu{
-		/*height modificado prob altura*/
+		/*height modificado*/
 		height: 25px;
 		/*height modificado*/
 		display: inline-block;
@@ -191,7 +236,7 @@ header #next_section img{
 		width: 75px;
 		text-align: center;
 		font-size: 1em;
-		margin: 0px -2px;
+		margin: 0px -1.2px;
 	}
 
 	header nav #card_menu ul li a{
